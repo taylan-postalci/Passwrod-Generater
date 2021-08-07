@@ -9,6 +9,12 @@ function writePassword() {
 
   passwordText.value = password;
 
+  var lower = "abcdefghijklmnopqrstuvwxyz"
+  var upper = lower.toUpperCase();
+  var special = "!@#$%^&*_-+=";
+  var vals = "";
+  var final = "";
+
 
   var upperCase = false;
   var lowerCase = false;
@@ -70,20 +76,32 @@ function writePassword() {
 
       questionNotDone = false;
     }
-    console.log(parseInt(pwlength));
-    console.log(lowerCase);
-    console.log(upperCase);
-    console.log(specialChar);
-    console.log(questionNotDone);
+    
   }
-  while (questionNotDone = false) {
-    //function generatePassword() {
-      console.log("someshizz")
-
-    //}
   
-  }
+  if (upperCase){
+    vals += upper;  
+    }
+    if (lowerCase){
+      vals += lower;  
+      }
+      if (specialChar){
+        vals += special;  
+        }
+
+      for(var i=0;i<pwlength;i++)
+      {
+        final+=vals.charAt(parseInt(Math.random()*vals.length));
+      }
+      document.getElementById("password").value = final;
+    console.log(final);
+    
+
+  
 }
+
+
+
 
 // while (questionNotDone = false) 
 // {
