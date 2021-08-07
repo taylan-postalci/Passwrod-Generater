@@ -75,8 +75,13 @@ function writePassword() {
     if (lowerCase || upperCase || specialChar) {
 
       questionNotDone = false;
+      
+
     }
-    
+    else {
+      alert("Please select atleast one of the given choices")
+    }
+
   }
   
   if (upperCase){
