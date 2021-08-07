@@ -4,15 +4,15 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 
 function writePassword() {
-  var password = generatePassword();
+  //var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
 
-  var upperCase = false
-  var lowerCase = false
-  var specialChar = false
+  var upperCase = false;
+  var lowerCase = false;
+  var specialChar = false;
   var questionNotDone = true;
 
   var pwlength =
@@ -27,11 +27,11 @@ function writePassword() {
 
   while (questionNotDone) {
     var input = prompt("Do you want your password to include upper case letters \n Type Y for yes and N for no")
-    while (input.toUpperCase().compareTo("Y") !== 0 && input.toUpperCase().compareTo("N") !== 0) {
+    while (input.toUpperCase() !== "N" && input.toUpperCase() !== "Y") {
       alert("Please input a Y or N!");
       input = prompt("Do you want your password to include upper case characters? \n Type Y for yes and N for no")
     }
-    if (input.toUpperCase().compareTo("Y") == 0) {
+    if (input.toUpperCase() == "Y") {
       upperCase = true;
     }
     else
@@ -40,11 +40,11 @@ function writePassword() {
 
 
     var input2 = prompt("Do you want your password to include lower case letters \n Type Y for yes and N for no")
-    while (input2.toUpperCase().compareTo("Y") != 0 && input2.toUpperCase().compareTo("N") != 0) {
+    while (input2.toUpperCase() !== "Y" && input2.toUpperCase() !== "N") {
       alert("Please input a Y or N!");
       input2 = prompt("Do you want your password to include lower case characters? \n Type Y for yes and N for no")
     }
-    if (input2.toUpperCase().compareTo("Y") == 0) {
+    if (input2.toUpperCase() == "Y") {
       lowerCase = true;
     }
     else
@@ -52,43 +52,46 @@ function writePassword() {
 
 
 
-    var input3 = prompt("Do you want your password to include special characters? \n Type Y for yes and N for no")
+    var input3 = prompt("Do you want your password to include special characters? \n Type Y for yes and N for no");
 
 
-    while (input3.toUpperCase().compareTo("Y") != 0 && input3.toUpperCase().compareTo("N") != 0) {
+    while (input3.toUpperCase() !== "Y" && input3.toUpperCase() !== "N") {
       alert("Please input a Y or N!");
-      input3 = prompt("Do you want your password to include special characters? \n Type Y for yes and N for no")
+      input3 = prompt("Do you want your password to include special characters? \n Type Y for yes and N for no");
     }
-    if (input3.toUpperCase().compareTo("Y") == 0) {
+    if (input3.toUpperCase() === "Y") {
       specialChar = true;
     }
     else
       specialChar = false;
 
 
-    if (lowerCase || upperCase || specialChar){
+    if (lowerCase || upperCase || specialChar) {
 
-    questionNotDone = false;
+      questionNotDone = false;
     }
-
-
-
+    console.log(parseInt(pwlength));
+    console.log(lowerCase);
+    console.log(upperCase);
+    console.log(specialChar);
+    console.log(questionNotDone);
   }
-  alert("YAY");
+  while (questionNotDone = false) {
+    //function generatePassword() {
+      console.log("someshizz")
+
+    //}
+  
+  }
 }
 
+// while (questionNotDone = false) 
+// {
+//   function generatePassword() {
+//     console.log("someshizz")
 
-
-
-console.log(parseInt(pwlength));
-
-
-
-
-function generatePassword() {
-  console.log("somebullshit")
-
-}
+//   }
+// }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+//generateBtn.addEventListener("click", writePassword)
